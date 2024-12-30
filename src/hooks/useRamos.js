@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 
+import industrias from "../assets/industrias.json"
 import informatica from "../assets/informatica.json";
 import cfg from "../assets/cfg.json";
 
-const ramosTotales = { ...informatica, ...cfg };
+const ramosTotales = { ...informatica, ...industrias, ...cfg };
 const useRamos = () => {
   const [ramos, setRamos] = useState({});
   useEffect(() => {
