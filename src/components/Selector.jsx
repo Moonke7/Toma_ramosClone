@@ -29,8 +29,7 @@ const Selector = ({
                   ramosTomados.includes(r[0]) && ramosTomados[indice] !== r[0]
                 }
               >
-                {console.log(r)}
-                {r[1]} - {r[0]} - {r[2]} semestre
+                {r[1]} - {r[0]}
               </option>
             ))}
           </optgroup>

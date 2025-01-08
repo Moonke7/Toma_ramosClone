@@ -1,36 +1,37 @@
 import { useState, useEffect } from "react";
 
-import comercial from "../assets/Comercial.json";
+import industrias from "../assets/industrias.json"
+import informatica from "../assets/informatica.json";
+import cfg from "../assets/cfg.json";
 
-const ramosTotales = { ...comercial };
+const ramosTotales = { ...informatica, ...industrias, ...cfg };
 const useRamos = () => {
   const [ramos, setRamos] = useState({});
   useEffect(() => {
     let opcionesRamos = Object.keys(ramosTotales);
-    opcionesRamos = opcionesRamos.map((p) => [
-      p,
-      ramosTotales[p][0].nombre,
-      ramosTotales[p][0].semestre,
-    ]);
+    opcionesRamos = opcionesRamos.map((p) => [p, ramosTotales[p][0].nombre]);
     const ramosSegunTematica = {
+      "Ciencias básicas": [],
       Ingenieria: [],
       Informática: [],
+      Ingles: [],
       "Formación general": [],
       Desconocido: [],
-      "Comercial x_x": [],
     };
     opcionesRamos.forEach((r) => {
       let codigo = r[0].slice(0, 3);
-      if (codigo.includes("ECE")) {
-        ramosSegunTematica["Comercial x_x"].push(r);
+      if (codigo.includes("CB")) {
+        ramosSegunTematica["Ciencias básicas"].push(r);
       } else if (codigo === "CIT") {
         ramosSegunTematica["Informática"].push(r);
       } else if (codigo === "CFG") {
         ramosSegunTematica["Formación general"].push(r);
       } else if (codigo === "CII") {
         ramosSegunTematica["Ingenieria"].push(r);
+      } else if (codigo === "CIG") {
+        ramosSegunTematica["Ingles"].push(r);
       } else {
-        ramosSegunTematica["Comercial x_x"].push(r);
+        ramosSegunTematica["Desconocido"].push(r);
       }
     });
     setRamos(ramosSegunTematica);
