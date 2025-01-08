@@ -10,7 +10,7 @@ import Selector from "../components/Selector";
 const Home = () => {
   const [ramos, , ramosTotales] = useRamos();
   const [ramosTomados, setRamosTomados] = useState([""]);
-  const router = useRouter()
+  const router = useRouter();
 
   const handleSelectorChange = (e, index) =>
     setRamosTomados([
@@ -26,11 +26,12 @@ const Home = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    router.push("/horarios")
-    localStorage.clear()
+    router.push("/horarios");
+    localStorage.clear();
     localStorage.setItem(
-      "ramos",JSON.stringify(ramosTomados.map((r) => ramosTotales[r])),
-    )
+      "ramos",
+      JSON.stringify(ramosTomados.map((r) => ramosTotales[r]))
+    );
   };
 
   return (
@@ -62,10 +63,7 @@ const Home = () => {
             Generar Horarios
           </button>
           <Link href="/">
-            <a className="btn btn-outline-warning">
-
-            Volver al inicio
-            </a>
+            <a className="btn btn-outline-warning">Volver al inicio</a>
           </Link>
         </form>
       </div>

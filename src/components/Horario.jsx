@@ -2,28 +2,22 @@ import Card from "./Card";
 
 const Horario = ({ horario }) => {
   const bloques = {
-    "08:30 - 09:50": "A",
-    "10:00 - 11:20": "B",
-    "11:30 - 12:50": "C",
-    "13:00 - 14:20": "D",
-    "14:30 - 15:50": "E",
-    "16:00 - 17:20": "F",
-    "17:25 - 18:45": "G",
-    "18:50 - 20:10": "H",
-    "20:15 - 21:35": "I",
+    "08:30 - 09:40": "A",
+    "09:50 - 11:00": "B",
+    "11:10 - 12:20": "C",
+    "12:30 - 13:40": "D",
+    "13:50 - 15:00": "E",
+    "15:10 - 16:20": "F",
+    "16:30 - 17:40": "G",
+    "17:50 - 19:00": "H",
+    "19:10 - 20:20": "I",
   };
   const bloqueA = Object.values(horario).map((d) => d.A);
   if (bloqueA.every((x) => !x)) {
-    delete bloques["08:30 - 09:50"];
+    delete bloques["08:30 - 09:40"];
   }
   const bloqueH = Object.values(horario).map((d) => d.H);
   const bloqueI = Object.values(horario).map((d) => d.I);
-  if (bloqueH.every((x) => !x)) {
-    delete bloques["18:50 - 20:10"];
-    if (bloqueI.every((x) => !x)) {
-      delete bloques["20:15 - 21:35"];
-    }
-  }
 
   return (
     <div className="container-xl">

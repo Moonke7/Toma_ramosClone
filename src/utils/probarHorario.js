@@ -10,6 +10,7 @@ const probarHorario = (secciones) => {
     let chequeado = [];
     for (let h of seccion.horarios) {
       const [dia, hora] = h;
+      console.log('dia'+ dia);
       if (horario[dia][hora]) {
         return false;
       } else {
