@@ -5927,8 +5927,8 @@
       "asignatura_referenciada": "CIT2202",
       "seccion": "Sección 3",
       "horarios": [
-        ["LU", "E", "CÁTEDRA 03"],
-        ["JU", "E", "CÁTEDRA 03"],
+        ["MA", "E", "CÁTEDRA 03"],
+        ["VI", "E", "CÁTEDRA 03"],
         ["MI", "D", "AYUDANTÍA OBLIGATORIA 03"]
       ],
       "sede": "S-SANTIAGO",
