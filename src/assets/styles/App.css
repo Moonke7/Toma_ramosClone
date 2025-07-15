@@ -1,3 +1,7 @@
+* {
+  font-family: "comic-sans", sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -11,6 +15,10 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+h1 {
+  font-family: "comic-sans", sans-serif;
 }
 
 .App-header {
